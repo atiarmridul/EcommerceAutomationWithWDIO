@@ -99,7 +99,7 @@ class ProductPage extends Page {
 
     async purchase (email,fname,lname,company,street,city,index,zip,country,phone) {
         
-
+        await browser.pause(2000);
         if (await $("#customer-email").isDisplayed()===true){
 
             await this.purchaseCustomerEmail.setValue(email);
@@ -110,6 +110,7 @@ class ProductPage extends Page {
         await this.purchaseStreetAddress.setValue(street);
         await this.purchaseCityName.setValue(city);
         await this.purchaseZipCode.setValue(zip);
+        await browser.pause(2000);
         await this.purchaseCountryName.selectByVisibleText(country);
         await this.purchaseStateName.selectByIndex(index);
         await this.purchasePhoneNumber.setValue(phone);

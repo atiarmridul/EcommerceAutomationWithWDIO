@@ -5,8 +5,9 @@ export const config = {
     specs: [
         // './test/specs/**/test.reg.js'
         // './test/specs/**/test.login.js'
-         './test/specs/**/test.product_purchase.js',
+        //  './test/specs/**/test.product_purchase.js',
         //  './test/specs/**/test.surfing.js',
+        './test/specs/**/test.product_purchase.js',
     ],
     
 
@@ -38,8 +39,6 @@ export const config = {
         ]
     },
 
-
-
     exclude: [
         // 'path/to/excluded/files'
     ],
@@ -48,13 +47,24 @@ export const config = {
         browser.maximizeWindow();
     },
 
-    maxInstances: 10,
     logLevel: 'error',
     bail: 0,
-    capabilities: [{
-        browserName: 'chrome'
-    }],
-    waitforTimeout: 40000,
+    capabilities: [
+        {
+            maxInstances: 10,
+            browserName: 'chrome',
+            acceptInsecureCerts: true
+        },
+        {
+            maxInstances: 10,
+            browserName: 'firefox',
+            acceptInsecureCerts: true
+        }
+    ],
+
+
+
+    waitforTimeout: 50000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
     services: [],
