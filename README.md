@@ -1,4 +1,4 @@
-# This is a personal project on WebDriverIO
+# This is a personal project with WebDriverIO
 
 My Test Website is: https://magento.softwaretestingboard.com
 
